@@ -10,9 +10,9 @@ const JWT_Secret = "helloworldofc$omputer";
 
 //ROUTE 1:Create a user using: POST "/api/auth/createuser". No login required
 router.post("/createuser", [
-    body('name'),
+    body('name','Enter a valid name').isLength({ options: { min: 3 } }),
     body('email', 'Enter a valid Email').isEmail(),
-    body('password', 'Password must be of atleast 5 charracter').isLength({ min: 5 })
+    body('password', 'Password must be of atleast 5 charracter').isLength({ options: { min: 5 } })
 ], async (req, res) => {
     let success = false;
     //If there are errors, return bad request and errors

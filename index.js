@@ -5,7 +5,7 @@ var cors = require('cors')
 connectToMongo();
 const app = express();
 var corsOptions = {
-  origin: 'https://inotebookbackendapi.onrender.com',
+  origin: 'https://inotebookarjun.netlify.app',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
